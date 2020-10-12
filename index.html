@@ -13,8 +13,8 @@
   <title> Tech Home Page </title>
 </head>
 
-<body>
-
+<body onload="preloaderFunc()">
+  <div id="preloader"></div>
   <video autoplay loop muted id="myVideo">
     <source src="videoplayback.mp4" type="video/mp4">
   </video>
@@ -37,6 +37,12 @@
     <div class="button">Register</div>
   </section>
   <script>
+    let preloader = document.getElementById("preloader");
+    function preloaderFunc() {
+      setTimeout(function () {
+        preloader.style.display = "none";
+      }, 2000)
+    }
     function myFunction() {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {

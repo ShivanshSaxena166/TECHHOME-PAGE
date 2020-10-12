@@ -31,6 +31,15 @@
   color: white;
 }
 
+#preloader {
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  position: fixed;
+  background: #fff url("https://www.jollysupullit.com.au/images/loader.gif")
+    no-repeat center;
+}
+
 .topnav a:hover {
   background-color: #25cfe4;
   color: black;
