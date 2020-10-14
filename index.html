@@ -14,6 +14,24 @@
 </head>
 
 <body onload="preloaderFunc()">
+  <div id="regForm">
+    <form id="register">
+      <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+      <input type="email" id="email" name="email" placeholder="Your email .." required>
+      <input type="password" id="password" name="password" placeholder="Your password.." required>
+      <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm your password.." required>
+      <input type="submit" id="regSubmit" name="regSubmit" value="Register">
+    </form>
+  </div>
+  <div id="logForm">
+    <form id="login">
+      <input type="email" id="email" name="email" placeholder="Your email .." required>
+      <input type="password" id="password" name="password" placeholder="Your password.." required>
+      <input type="submit" id="logSubmit" name="logSubmit" value="Login">
+
+    </form>
+  </div>
   <div id="preloader"></div>
   <video autoplay loop muted id="myVideo">
     <source src="videoplayback.mp4" type="video/mp4">
@@ -34,7 +52,10 @@
       </a>
 
     </div>
-    <div class="button">Register</div>
+    <div class="authbuttons">
+      <div class="button" onclick="regPopup()">Register</div>
+      <div class="button" onclick="logPopup()">Login</div>
+    </div>
   </section>
   <script>
     let preloader = document.getElementById("preloader");
@@ -51,6 +72,32 @@
         x.className = "topnav";
       }
     }
+    function regPopup() {
+      var x = document.getElementById("regForm");
+      x.style.display = "block";
+      var a = document.querySelector(".authbuttons");
+      a.style.display = "none"
+    }
+    function logPopup() {
+      var y = document.getElementById("logForm");
+      y.style.display = "block";
+       var a = document.querySelector(".authbuttons");
+      a.style.display = "none"
+    }
+    window.addEventListener("click", e => {
+      if(e.path[0].id === "regForm"){
+        var x = document.getElementById("regForm");
+        x.style.display = "none";
+        var a = document.querySelector(".authbuttons");
+        a.style.display = "flex"
+      }
+      if(e.path[0].id === "logForm"){
+        var x = document.getElementById("logForm");
+        x.style.display = "none";
+        var a = document.querySelector(".authbuttons");
+        a.style.display = "flex"
+      }
+    });
   </script>
 </body>
 
