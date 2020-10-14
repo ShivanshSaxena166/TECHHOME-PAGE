@@ -6,6 +6,17 @@
   width: 100%;
   position: absolute;
 }
+.authbuttons{
+  width: 280px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 90vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .topnav {
   overflow: hidden;
   background-color: #2cdbf7bd;
@@ -93,25 +104,26 @@
   }
 }
 
+#register input[type=submit],
+#login input[type=submit],
 .button {
   background-color: #ffce0b;
   border: none;
   color: black;
-  padding: 15px 32px;
+  height: 50px;
+  margin: 10px;
   text-align: center;
+  padding: 15px 32px;
+  align-self: center;
   text-decoration: none;
   font-weight: 650;
-  display: inline-block;
   font-size: 16px;
-  margin: 35% 20%;
   cursor: pointer;
-  position: fixed;
-  top: 18%;
-  left: 30%;
-  transform: translate(-50%, -50%);
   border-radius: 3px;
 }
 
+#register input[type=submit],
+#login input[type=submit],
 .button:hover {
   transition: ease;
   animation-name: button-anim;
@@ -124,4 +136,46 @@
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+}
+
+#logForm{
+  background: white;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 100;
+  position: absolute;
+}
+
+#regForm, #logForm{
+  background-color: #ffffff45;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 100;
+  position: absolute;
+}
+
+#register, #login{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #14aec9;
+  background-color: #2cdbf77a;
+  border-radius: 10px;
+}
+
+#register input,
+#login input{
+  margin: 10px;
+  padding: 10px 10px;
+  width: 300px;
+  border-radius: 4px;
+  align-self: center;
+  outline: none;
+  border: none;
 }
